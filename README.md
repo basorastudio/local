@@ -1,18 +1,16 @@
-## Instalador para uso em Modo Local
+## Instalador para uso en Modo Local
 
-Testado ubuntu 20 e 22
+Probado en Ubuntu 20 y 22
 
+Editar el archivo config y colocar contraseñas de tu preferencia y la IP de la máquina Ubuntu local
 
-Editar arquivo config e colocar senhas de sua preferencia e ip do maquina ubuntu local
+La opción actualizar obtendrá la última versión del repositorio usado para instalar
 
+---
 
-A opção atualizar vai pegar ultima versao do repositorio usado para instalar
+## EJECUTAR LOS COMANDOS ABAJO ##
 
-
-
-## RODAR OS COMANDOS ABAIXO ##
-
-para evitar erros recomendados atualizar sistema e apos atualizar reniciar para evitar erros
+Para evitar errores se recomienda actualizar el sistema y luego reiniciar para evitar errores
 
 ```bash
 apt -y update && apt -y upgrade
@@ -21,8 +19,7 @@ apt -y update && apt -y upgrade
 reboot
 ```
 
- 
-Depois reniciar seguir com a instalacao
+Después de reiniciar, continuar con la instalación
 
 ```bash
 cd /root
@@ -30,7 +27,8 @@ cd /root
 ```bash
 git clone https://github.com/basorastudio/multiagente.git izinginstalador
 ```
-Editar dados com seus dados, com nano para salvar aperta Ctrl + x
+
+Editar los datos con tus datos, con nano para guardar presiona Ctrl + x
 ```bash
 nano ./izinginstalador/config
 ```
@@ -44,30 +42,31 @@ cd ./izinginstalador
 sudo ./izing
 ```
 
-## Problemas conexão whatsapp? ##
+## ¿Problemas de conexión con WhatsApp? ##
 
-Tente atualizar o Conector WWebJS whatsapp.js
+Intenta actualizar el Conector WWebJS whatsapp.js
 
+---
 
-## Alterar Frontend
+## Cambiar el Frontend
 
-Para mudar nome do aplicativo:
+Para cambiar el nombre de la aplicación:
 
 /home/deploy/izing.io/frontend/quasar.conf
 
 /home/deploy/izing.io/frontend/src/index.template.html
 
-Para alterar logos e icones:
+Para cambiar logos e iconos:
 
-pasta /home/deploy/izing.io/frontend/public
+carpeta /home/deploy/izing.io/frontend/public
 
-Para alterar cores:
+Para cambiar colores:
 
 /home/deploy/izing.io/frontend/src/css/app.sass
 
 /home/deploy/izing.io/frontend/src/css/quasar.variables.sass
 
-Sempre alterar usando usuario deploy você pode conectar servidor com aplicativo Bitvise SSH Client. Depois das alterações compilar novamente o Frontend
+Siempre realizar cambios usando el usuario deploy. Puedes conectarte al servidor con la aplicación Bitvise SSH Client. Después de los cambios, compilar nuevamente el Frontend
 
 ```bash
 su deploy
@@ -79,11 +78,13 @@ cd /home/deploy/izing.io/frontend/
 npm run build
 ```
 
-Testar as alterações em aba anonima
+Probar los cambios en una pestaña de incógnito
 
-## Erros
+---
 
-"Internal server error: SequelizeConnectionError: could not open file \"global/pg_filenode.map\": Permission denied"
+## Errores
+
+"Error interno del servidor: SequelizeConnectionError: no se pudo abrir el archivo \"global/pg_filenode.map\": Permiso denegado"
 
 ```bash
 docker container restart postgresql
@@ -95,17 +96,24 @@ docker exec -u root postgresql bash -c "chown -R postgres:postgres /var/lib/post
 docker container restart postgresql
 ```
 
-## Problemas enviar audios e noticações
+---
 
-Isso porque você não possui certificado quando roda localmente consideram a conexão como insegura e bloqueiam o microfone.
+## Problemas al enviar audios y notificaciones
 
-Você consegue resolver isto, acessando o link dentro do navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e inserindo o ip com porta do seu frontend e backend.
+Esto ocurre porque no tienes certificado. Cuando se ejecuta localmente, se considera la conexión como no segura y bloquean el micrófono.
 
-## Acesso Portainer gerar senha
-"Your Portainer instance timed out for security purposes. To re-enable your Portainer instance, you will need to restart Portainer."
+Puedes resolver esto accediendo al siguiente enlace desde el navegador Chrome: chrome://flags/#unsafely-treat-insecure-origin-as-secure e insertando la IP con puerto de tu frontend y backend.
+
+---
+
+## Acceder a Portainer y generar contraseña
+
+"Tu instancia de Portainer se cerró por motivos de seguridad. Para volver a habilitar tu instancia de Portainer, deberás reiniciarla."
 
 ```bash
 docker container restart portainer
 ```
 
-Depois acesse novamente url http://seuip:9000/
+Luego accede nuevamente a la URL http://tuip:9000/
+
+---
