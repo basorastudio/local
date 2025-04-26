@@ -1,10 +1,4 @@
-[![Grupo do WhatsApp](https://img.shields.io/badge/WhatsApp-Grupo%20Whazing-brightgreen.svg)](https://grupo.whazing.com.br)
-
 ## Instalador para uso em Modo Local
-
-Para computadores windows você pode virtualizar uma maquina windows com o https://www.virtualbox.org/
-
-https://www.datalib.com.br/post/instala%C3%A7%C3%A3o-do-ubuntu-20-04-desktop-no-virtual-box
 
 Testado ubuntu 20 e 22
 
@@ -14,10 +8,6 @@ Editar arquivo config e colocar senhas de sua preferencia e ip do maquina ubuntu
 
 A opção atualizar vai pegar ultima versao do repositorio usado para instalar
 
-
-## MEU REPOSITORIO TEM ALGUMAS MUDANÇAS AO ORIGINAL VERIQUE O README
-
-https://github.com/cleitonme/izing.open.io
 
 
 ## RODAR OS COMANDOS ABAIXO ##
@@ -38,7 +28,7 @@ Depois reniciar seguir com a instalacao
 cd /root
 ```
 ```bash
-git clone https://github.com/cleitonme/izing.local.git izinginstalador
+git clone https://github.com/basorastudio/multiagente.git izinginstalador
 ```
 Editar dados com seus dados, com nano para salvar aperta Ctrl + x
 ```bash
@@ -119,23 +109,3 @@ docker container restart portainer
 ```
 
 Depois acesse novamente url http://seuip:9000/
-
-## Recomendação de VPS boa e barata
-
--  [Powerful cloud VPS & Web hosting.](https://control.peramix.com/?affid=58)
-
-- Cupom 25% desconto "WHAZING"
-
-```bash
-WHAZING
-```
-
-#### Curtiu? Apoie o projeto!! Com sua doação, será possível continuar com as atualizações. Segue QR code (PIX)  
-
-[<img src="donate.jpg" height="160" width="180"/>](donate.jpg)
-
-## Consultoria particular
-
-Para quem gostaria de uma consultoria ou que eu faça instalação pode chamar no whatsapp 48 999416725 (será cobrado por isso)
-
--  [Versão API Bayles](https://github.com/cleitonme/Whazing-SaaS.instalador)
