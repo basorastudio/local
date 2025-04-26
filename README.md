@@ -27,13 +27,8 @@ cd /root
 ```bash
 git clone https://github.com/basorastudio/multiagente.git izinginstalador
 ```
-
-Editar los datos con tus datos, con nano para guardar presiona Ctrl + x
 ```bash
-nano ./izinginstalador/config
-```
-```bash
-sudo chmod +x ./izinginstalador/izing
+sudo chmod +x ./multiagente/izing
 ```
 ```bash
 cd ./izinginstalador
