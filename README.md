@@ -25,7 +25,7 @@ Después de reiniciar, continuar con la instalación
 cd /root
 ```
 ```bash
-git clone https://github.com/basorastudio/multiagente.git izinginstalador
+git clone https://github.com/basorastudio/multiagente.git multiagente
 ```
 ```bash
 sudo chmod +x ./multiagente/izing
