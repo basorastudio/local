@@ -25,13 +25,13 @@ Después de reiniciar, continuar con la instalación
 cd /root
 ```
 ```bash
-git clone https://github.com/basorastudio/local.git multiagente
+git clone https://github.com/basorastudio/local.git local
 ```
 ```bash
-sudo chmod +x ./multiagente/izing
+sudo chmod +x ./local/izing
 ```
 ```bash
-cd ./izinginstalador
+cd ./local
 ```
 ```bash
 sudo ./izing
