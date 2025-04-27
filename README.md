@@ -18,10 +18,9 @@ La opción actualizar obtendrá la última versión del repositorio usado para i
 Para evitar errores se recomienda actualizar el sistema y luego reiniciar para evitar errores
 
 
-```bash
 apt -y update && apt -y upgrade
 ```
-```bash
+
 reboot
 ```
 
