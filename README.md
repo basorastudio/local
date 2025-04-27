@@ -37,10 +37,6 @@ cd /root
 ```
 ```bash
 ```
-Editar datos con sus datos, con nano para guardar presiona Ctrl + x
-```bash
-nano ./izinginstalador/config
-=======
 git clone https://github.com/basorastudio/local.git local
 
 ```
