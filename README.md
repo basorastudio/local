@@ -1,162 +1,131 @@
-
-## EJECUTAR LOS COMANDOS A CONTINUACIÓN ##
-
-para evitar errores se recomienda actualizar el sistema y después de actualizar reiniciar para evitar errores
-=======
-## Instalador para uso en Modo Local
-
-Probado en Ubuntu 20 y 22
-
-Editar el archivo config y colocar contraseñas de tu preferencia y la IP de la máquina Ubuntu local
-
-La opción actualizar obtendrá la última versión del repositorio usado para instalar
+¡Claro! Aquí tienes un README ordenado y listo para GitHub basado en el contenido que enviaste:
 
 ---
 
-## EJECUTAR LOS COMANDOS ABAJO ##
+# Instalador para Uso en Modo Local
 
-Para evitar errores se recomienda actualizar el sistema y luego reiniciar para evitar errores
+Probado en **Ubuntu 20** y **Ubuntu 22**.
 
+> ⚡ **Importante:** Antes de instalar, se recomienda actualizar el sistema y reiniciar para evitar errores.
 
+---
+
+## Pasos Iniciales
+
+Actualizar el sistema:
+```bash
 apt -y update && apt -y upgrade
 ```
 
+Reiniciar el servidor:
+```bash
 reboot
 ```
 
+Después del reinicio, proceder con la instalación:
 
- 
-Después de reiniciar, seguir con la instalación
-=======
-Después de reiniciar, continuar con la instalación
-
-
-
+```bash
 cd /root
-```
-
-```
 git clone https://github.com/basorastudio/local.git local
-
-```
-
 sudo chmod +x ./local/izing
-```
-
 cd ./local
-```
-
 sudo ./izing
 ```
 
-## ¿Problemas de conexión con WhatsApp? ##
+---
 
-Intenta actualizar el Conector WWebJS whatsapp.js
+## Configuración Inicial
+
+- Editar el archivo `config`.
+- Colocar contraseñas de tu preferencia.
+- Configurar la IP de la máquina Ubuntu local.
+
+La opción **actualizar** descargará la última versión del repositorio usado para la instalación.
 
 ---
 
+## Problemas de Conexión con WhatsApp
 
-## Modificar Frontend
-=======
-## Cambiar el Frontend
+Si tienes problemas de conexión, intenta actualizar el conector **WWebJS** `whatsapp.js`.
 
+---
 
-Para cambiar el nombre de la aplicación:
+# Modificar el Frontend
 
-/home/deploy/izing.io/frontend/quasar.conf
+## Cambiar el nombre de la aplicación:
 
-/home/deploy/izing.io/frontend/src/index.template.html
+Editar los siguientes archivos:
+- `/home/deploy/izing.io/frontend/quasar.conf`
+- `/home/deploy/izing.io/frontend/src/index.template.html`
 
-Para modificar logos e iconos:
+## Cambiar logos e iconos:
 
-carpeta /home/deploy/izing.io/frontend/public
+Modificar la carpeta:
+- `/home/deploy/izing.io/frontend/public`
 
-Para modificar colores:
-=======
-Para cambiar logos e iconos:
+## Cambiar colores:
 
-carpeta /home/deploy/izing.io/frontend/public
+Editar los archivos:
+- `/home/deploy/izing.io/frontend/src/css/app.sass`
+- `/home/deploy/izing.io/frontend/src/css/quasar.variables.sass`
 
-Para cambiar colores:
+> 🛠️ **Notas:**
+> - Siempre realizar cambios usando el usuario **deploy**.
+> - Puedes conectarte al servidor usando la aplicación **Bitvise SSH Client**.
+> - Después de las modificaciones, es necesario **compilar nuevamente el Frontend**.
 
-
-/home/deploy/izing.io/frontend/src/css/app.sass
-
-/home/deploy/izing.io/frontend/src/css/quasar.variables.sass
-
-<<<<<<< HEAD
-Siempre modificar usando el usuario deploy. Puedes conectar al servidor con la aplicación Bitvise SSH Client. Después de las modificaciones, compilar nuevamente el Frontend
-=======
-Siempre realizar cambios usando el usuario deploy. Puedes conectarte al servidor con la aplicación Bitvise SSH Client. Después de los cambios, compilar nuevamente el Frontend
-
-
+Compilar:
 ```bash
 su deploy
-```
-```bash
 cd /home/deploy/izing.io/frontend/
-```
-```bash
 npm run build
 ```
 
-
-Probar las modificaciones en una pestaña de incógnito
-
-## Errores
-=======
-Probar los cambios en una pestaña de incógnito
+**Importante:** Probar las modificaciones en una **pestaña de incógnito**.
 
 ---
 
+# Solución de Errores
 
-## Errores
+## Error: SequelizeConnectionError
 
-"Error interno del servidor: SequelizeConnectionError: no se pudo abrir el archivo \"global/pg_filenode.map\": Permiso denegado"
+"Error interno del servidor: SequelizeConnectionError: no se pudo abrir el archivo `global/pg_filenode.map`: Permiso denegado."
 
+Solución:
 ```bash
 docker container restart postgresql
-```
-```bash
 docker exec -u root postgresql bash -c "chown -R postgres:postgres /var/lib/postgresql/data"
-```
-```bash
 docker container restart postgresql
 ```
 
-
-## Problemas al enviar audios y notificaciones
-
-Esto sucede porque no tienes un certificado cuando se ejecuta localmente, consideran la conexión como insegura y bloquean el micrófono.
-
-Puedes resolver esto accediendo al enlace dentro del navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e insertando la IP con el puerto de tu frontend y backend.
-
-## Acceso a Portainer generar contraseña
-"Your Portainer instance timed out for security purposes. To re-enable your Portainer instance, you will need to restart Portainer."
-=======
 ---
 
 ## Problemas al enviar audios y notificaciones
 
-Esto ocurre porque no tienes certificado. Cuando se ejecuta localmente, se considera la conexión como no segura y bloquean el micrófono.
+Sucede porque la conexión se considera **insegura** al ejecutarse localmente (sin certificado SSL), lo cual bloquea el micrófono.
 
-Puedes resolver esto accediendo al siguiente enlace desde el navegador Chrome: chrome://flags/#unsafely-treat-insecure-origin-as-secure e insertando la IP con puerto de tu frontend y backend.
+**Solución:**
+- Accede en Chrome a `chrome://flags/#unsafely-treat-insecure-origin-as-secure`
+- Inserta la IP y puerto de tu frontend y backend para permitir el uso seguro.
 
 ---
 
-## Acceder a Portainer y generar contraseña
+# Acceder a Portainer y Generar Contraseña
 
-"Tu instancia de Portainer se cerró por motivos de seguridad. Para volver a habilitar tu instancia de Portainer, deberás reiniciarla."
+Si ves el mensaje:
 
+> "Tu instancia de Portainer se cerró por motivos de seguridad. Para volver a habilitarla, deberás reiniciarla."
 
+Reiniciar Portainer:
 ```bash
 docker container restart portainer
 ```
 
-
-Después accede nuevamente a la URL http://tuip:9000/
-=======
-Luego accede nuevamente a la URL http://tuip:9000/
+Después, accede nuevamente:
+```
+http://tuip:9000/
+```
 
 ---
 
+¿Quieres que también te prepare una versión en inglés o un formato con secciones plegables para que luzca aún más profesional? 🚀
