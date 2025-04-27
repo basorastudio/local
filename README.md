@@ -36,8 +36,6 @@ Después de reiniciar, continuar con la instalación
 cd /root
 ```
 ```bash
-
-git clone https://github.com/cleitonme/izing.local.git izinginstalador
 ```
 Editar datos con sus datos, con nano para guardar presiona Ctrl + x
 ```bash
