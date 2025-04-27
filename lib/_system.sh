@@ -1,15 +1,15 @@
 #!/bin/bash
 # 
-# system management
+# gestión del sistema
 
 #######################################
-# creates user
+# crea usuario
 # Arguments:
 #   None
 #######################################
 system_create_user() {
   print_banner
-  printf "${WHITE} 💻 Agora, vamos criar o usuário para deploy...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Ahora, vamos a crear el usuario para deploy...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -25,32 +25,32 @@ EOF
 
 
 #######################################
-# set timezone
+# establecer zona horaria
 # Arguments:
 #   None
 #######################################
 system_set_timezone() {
   print_banner
-  printf "${WHITE} 💻 Setando timezone...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Estableciendo zona horaria...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
 
   sudo su - root <<EOF
-  timedatectl set-timezone America/Sao_Paulo
+  timedatectl set-timezone America/Santo_Domingo
 EOF
 
   sleep 2
 }
 
 #######################################
-# unzip izing
+# descomprimir izing
 # Arguments:
 #   None
 #######################################
 system_unzip_izing() {
   print_banner
-  printf "${WHITE} 💻 Baixando izing...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Descargando izing...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -63,13 +63,13 @@ EOF
 }
 
 #######################################
-# updates system
+# actualiza el sistema
 # Arguments:
 #   None
 #######################################
 system_update() {
   print_banner
-  printf "${WHITE} 💻 Vamos atualizar o sistema...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos a actualizar el sistema...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -86,7 +86,7 @@ EOF
 }
 
 #######################################
-# installs node
+# instala node
 # Arguments:
 #   None
 #######################################
@@ -107,7 +107,7 @@ EOF
 
 
 #######################################
-# installs docker
+# instala docker
 # Arguments:
 #   None
 #######################################
@@ -134,8 +134,8 @@ EOF
 }
 
 #######################################
-# Ask for file location containing
-# multiple URL for streaming.
+# Preguntar por la ubicación del archivo que contiene
+# múltiples URL para streaming.
 # Globals:
 #   WHITE
 #   GRAY_LIGHT
@@ -146,7 +146,7 @@ EOF
 #######################################
 system_puppeteer_dependencies() {
   print_banner
-  printf "${WHITE} 💻 Instalando puppeteer dependencies...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Instalando dependencias de puppeteer...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -159,7 +159,7 @@ EOF
 }
 
 #######################################
-# installs pm2
+# instala pm2
 # Arguments:
 #   None
 #######################################
@@ -180,7 +180,7 @@ EOF
 }
 
 #######################################
-# installs snapd
+# instala snapd
 # Arguments:
 #   None
 #######################################
@@ -202,13 +202,13 @@ EOF
 
 
 #######################################
-# install_chrome
+# instalar_chrome
 # Arguments:
 #   None
 #######################################
 system_set_user_mod() {
   print_banner
-  printf "${WHITE} 💻 Vamos permisoes docker...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Vamos a dar permisos a docker...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -222,13 +222,13 @@ EOF
 }
 
 #######################################
-# reboot
+# reiniciar
 # Arguments:
 #   None
 #######################################
 system_reboot() {
   print_banner
-  printf "${WHITE} 💻 Reboot...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Reiniciando...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -241,13 +241,13 @@ EOF
 }
 
 #######################################
-# creates docker db
+# crea la base de datos docker
 # Arguments:
 #   None
 #######################################
 system_docker_start() {
   print_banner
-  printf "${WHITE} 💻 Iniciando container docker...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Iniciando contenedor docker...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -263,13 +263,13 @@ EOF
 }
 
 #######################################
-# creates docker db
+# crea la base de datos docker
 # Arguments:
 #   None
 #######################################
 system_docker_restart() {
   print_banner
-  printf "${WHITE} 💻 Iniciando container docker...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Iniciando contenedor docker...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -285,19 +285,19 @@ EOF
 
 
 #######################################
-# creates final message
+# crea mensaje final
 # Arguments:
 #   None
 #######################################
 system_success() {
   print_banner
-  printf "${GREEN} 💻 Instalação concluída com Sucesso...${NC}"
+  printf "${GREEN} 💻 Instalación completada con Éxito...${NC}"
   printf "${CYAN_LIGHT}";
   printf "\n\n"
   printf "\n"
-  printf "Usuário: admin@izing.io"
+  printf "Usuario: admin@izing.io"
   printf "\n"
-  printf "Senha: 123456"
+  printf "Contraseña: 123456"
   printf "\n"
   printf "URL front: http://$ipservidorubuntu:4000"
   printf "\n"
@@ -305,15 +305,15 @@ system_success() {
   printf "\n"
   printf "Acesso ao Portainer: http://$ipservidorubuntu:9000"
   printf "\n"
-  printf "Senha Usuario Deploy: $deploy_password"
+  printf "Contraseña Usuario Deploy: $deploy_password"
   printf "\n"
-  printf "Usuario do Banco de Dados: izing"
+  printf "Usuario de la Base de Datos: izing"
   printf "\n"
-  printf "Nome do Banco de Dados: postgres"
+  printf "Nombre de la Base de Datos: postgres"
   printf "\n"
-  printf "Senha do Banco de Dados: $pg_pass"
+  printf "Contraseña de la Base de Datos: $pg_pass"
   printf "\n"
-  printf "Senha do Redis: $redis_pass"
+  printf "Contraseña de Redis: $redis_pass"
   printf "\n"
   printf "${NC}";
 

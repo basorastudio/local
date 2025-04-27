@@ -1,15 +1,15 @@
 #!/bin/bash
 # 
-# functions for setting up app frontend
+# funciones para configurar el frontend de la aplicación
 
 #######################################
-# installed node packages
+# paquetes de nodo instalados
 # Arguments:
 #   None
 #######################################
 frontend_node_dependencies() {
   print_banner
-  printf "${WHITE} 💻 Instalando dependências do frontend...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Instalando dependencias del frontend...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -24,13 +24,13 @@ EOF
 }
 
 #######################################
-# compiles frontend code
+# compila el código del frontend
 # Arguments:
 #   None
 #######################################
 frontend_node_build() {
   print_banner
-  printf "${WHITE} 💻 Compilando o código do frontend...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Compilando el código del frontend...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -47,13 +47,13 @@ EOF
 
 
 #######################################
-# sets frontend environment variables
+# establece las variables de entorno del frontend
 # Arguments:
 #   None
 #######################################
 frontend_set_env() {
   print_banner
-  printf "${WHITE} 💻 Configurando variáveis de ambiente (frontend)...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Configurando variables de entorno (frontend)...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -72,13 +72,13 @@ EOF
 }
 
 #######################################
-# gera arquivo server.js
+# genera archivo server.js
 # 
 #   
 #######################################
 frontend_serverjs() {
   print_banner
-  printf "${WHITE} 💻 gerar arquivo server.js (frontend)...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Generando server.js (frontend)...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -101,14 +101,14 @@ EOF
 }
 
 #######################################
-# starts frontend using pm2 in 
-# production mode.
+# inicia el frontend usando pm2 en 
+# modo de producción.
 # Arguments:
 #   None
 #######################################
 frontend_start_pm2() {
   print_banner
-  printf "${WHITE} 💻 Iniciando pm2 (backend)...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Iniciando pm2 (frontend)...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2

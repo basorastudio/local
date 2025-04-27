@@ -20,11 +20,11 @@ izing_atualizar() {
 inquiry_options() {
   
   print_banner
-  printf "${WHITE} 💻 O que você precisa fazer?${GRAY_LIGHT}"
+  printf "${WHITE} 💻 ¿Qué necesitas hacer?${GRAY_LIGHT}"
   printf "\n\n"
   printf "   [1] Instalar\n"
-  printf "   [2] Atualizar Conector WWebJS whatsapp.js\n"
-  printf "   [3] Atualizar Izing\n"
+  printf "   [2] Actualizar Conector WWebJS whatsapp.js\n"
+  printf "   [3] Actualizar Izing\n"
   printf "\n"
   read -p "> " option
 

@@ -1,28 +1,6 @@
-[![Grupo do WhatsApp](https://img.shields.io/badge/WhatsApp-Grupo%20Whazing-brightgreen.svg)](https://grupo.whazing.com.br)
+## EJECUTAR LOS COMANDOS A CONTINUACIÓN ##
 
-## Instalador para uso em Modo Local
-
-Para computadores windows você pode virtualizar uma maquina windows com o https://www.virtualbox.org/
-
-https://www.datalib.com.br/post/instala%C3%A7%C3%A3o-do-ubuntu-20-04-desktop-no-virtual-box
-
-Testado ubuntu 20 e 22
-
-
-Editar arquivo config e colocar senhas de sua preferencia e ip do maquina ubuntu local
-
-
-A opção atualizar vai pegar ultima versao do repositorio usado para instalar
-
-
-## MEU REPOSITORIO TEM ALGUMAS MUDANÇAS AO ORIGINAL VERIQUE O README
-
-https://github.com/cleitonme/izing.open.io
-
-
-## RODAR OS COMANDOS ABAIXO ##
-
-para evitar erros recomendados atualizar sistema e apos atualizar reniciar para evitar erros
+para evitar errores se recomienda actualizar el sistema y después de actualizar reiniciar para evitar errores
 
 ```bash
 apt -y update && apt -y upgrade
@@ -32,7 +10,7 @@ reboot
 ```
 
  
-Depois reniciar seguir com a instalacao
+Después de reiniciar, seguir con la instalación
 
 ```bash
 cd /root
@@ -40,7 +18,7 @@ cd /root
 ```bash
 git clone https://github.com/cleitonme/izing.local.git izinginstalador
 ```
-Editar dados com seus dados, com nano para salvar aperta Ctrl + x
+Editar datos con sus datos, con nano para guardar presiona Ctrl + x
 ```bash
 nano ./izinginstalador/config
 ```
@@ -54,30 +32,30 @@ cd ./izinginstalador
 sudo ./izing
 ```
 
-## Problemas conexão whatsapp? ##
+## ¿Problemas de conexión con WhatsApp? ##
 
-Tente atualizar o Conector WWebJS whatsapp.js
+Intenta actualizar el Conector WWebJS whatsapp.js
 
 
-## Alterar Frontend
+## Modificar Frontend
 
-Para mudar nome do aplicativo:
+Para cambiar el nombre de la aplicación:
 
 /home/deploy/izing.io/frontend/quasar.conf
 
 /home/deploy/izing.io/frontend/src/index.template.html
 
-Para alterar logos e icones:
+Para modificar logos e iconos:
 
-pasta /home/deploy/izing.io/frontend/public
+carpeta /home/deploy/izing.io/frontend/public
 
-Para alterar cores:
+Para modificar colores:
 
 /home/deploy/izing.io/frontend/src/css/app.sass
 
 /home/deploy/izing.io/frontend/src/css/quasar.variables.sass
 
-Sempre alterar usando usuario deploy você pode conectar servidor com aplicativo Bitvise SSH Client. Depois das alterações compilar novamente o Frontend
+Siempre modificar usando el usuario deploy. Puedes conectar al servidor con la aplicación Bitvise SSH Client. Después de las modificaciones, compilar nuevamente el Frontend
 
 ```bash
 su deploy
@@ -89,9 +67,9 @@ cd /home/deploy/izing.io/frontend/
 npm run build
 ```
 
-Testar as alterações em aba anonima
+Probar las modificaciones en una pestaña de incógnito
 
-## Erros
+## Errores
 
 "Internal server error: SequelizeConnectionError: could not open file \"global/pg_filenode.map\": Permission denied"
 
@@ -105,37 +83,17 @@ docker exec -u root postgresql bash -c "chown -R postgres:postgres /var/lib/post
 docker container restart postgresql
 ```
 
-## Problemas enviar audios e noticações
+## Problemas al enviar audios y notificaciones
 
-Isso porque você não possui certificado quando roda localmente consideram a conexão como insegura e bloqueiam o microfone.
+Esto sucede porque no tienes un certificado cuando se ejecuta localmente, consideran la conexión como insegura y bloquean el micrófono.
 
-Você consegue resolver isto, acessando o link dentro do navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e inserindo o ip com porta do seu frontend e backend.
+Puedes resolver esto accediendo al enlace dentro del navegador Chrome; chrome://flags/#unsafely-treat-insecure-origin-as-secure e insertando la IP con el puerto de tu frontend y backend.
 
-## Acesso Portainer gerar senha
+## Acceso a Portainer generar contraseña
 "Your Portainer instance timed out for security purposes. To re-enable your Portainer instance, you will need to restart Portainer."
 
 ```bash
 docker container restart portainer
 ```
 
-Depois acesse novamente url http://seuip:9000/
-
-## Recomendação de VPS boa e barata
-
--  [Powerful cloud VPS & Web hosting.](https://control.peramix.com/?affid=58)
-
-- Cupom 25% desconto "WHAZING"
-
-```bash
-WHAZING
-```
-
-#### Curtiu? Apoie o projeto!! Com sua doação, será possível continuar com as atualizações. Segue QR code (PIX)  
-
-[<img src="donate.jpg" height="160" width="180"/>](donate.jpg)
-
-## Consultoria particular
-
-Para quem gostaria de uma consultoria ou que eu faça instalação pode chamar no whatsapp 48 999416725 (será cobrado por isso)
-
--  [Versão API Bayles](https://github.com/cleitonme/Whazing-SaaS.instalador)
+Después accede nuevamente a la URL http://tuip:9000/
