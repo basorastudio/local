@@ -4,4 +4,8 @@ db_pass=Azo9p394075*
 pg_pass=Azo9p394075*
 redis_pass=Azo9p394075*
 repositorio=https://github.com/basorastudio/multiagente.git
+<<<<<<< HEAD
 ipservidorubuntu=localhost
+=======
+ipservidorubuntu=localhost
+>>>>>>> fb590da3d409fa9c73719dec7b5a7bfd2489b721
